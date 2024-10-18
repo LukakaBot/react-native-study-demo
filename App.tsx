@@ -1,5 +1,15 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View, SafeAreaView, Image } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  SafeAreaView,
+  Image,
+  TouchableWithoutFeedback,
+  TouchableOpacity,
+  TouchableHighlight,
+  TouchableNativeFeedback,
+} from "react-native";
 
 export default function App() {
   const handlePress = () => {
@@ -13,16 +23,41 @@ export default function App() {
         React Native - Hello React Native - Hello React Native - Hello React
         Native
       </Text>
-      <Image
-        blurRadius={10}
-        fadeDuration={1000}
-        source={{
-          width: 200,
-          height: 300,
-          uri: "https://picsum.photos/200/300",
-        }}
-      />
-      {/* <Image source={require("./assets/favicon.png")} /> */}
+      <TouchableWithoutFeedback onPress={() => console.log("Image Pressed")}>
+        <Image
+          fadeDuration={1000}
+          source={{
+            width: 100,
+            height: 100,
+            uri: "https://picsum.photos/100/100",
+          }}
+        />
+      </TouchableWithoutFeedback>
+      <TouchableOpacity onPress={() => console.log("Image Pressed")}>
+        <Image
+          fadeDuration={1000}
+          source={{
+            width: 100,
+            height: 100,
+            uri: "https://picsum.photos/100/100",
+          }}
+        />
+      </TouchableOpacity>
+      <TouchableHighlight onPress={() => console.log("Image Pressed")}>
+        <Image
+          fadeDuration={1000}
+          source={{
+            width: 100,
+            height: 100,
+            uri: "https://picsum.photos/100/100",
+          }}
+        />
+      </TouchableHighlight>
+      <TouchableNativeFeedback>
+        <View
+          style={{ width: 100, height: 100, backgroundColor: "dodgerblue" }}
+        />
+      </TouchableNativeFeedback>
       <StatusBar style="auto" />
     </SafeAreaView>
   );
