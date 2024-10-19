@@ -4,17 +4,19 @@ import {
   View,
   Platform,
   StatusBar,
-  Dimensions,
+  Text,
+  useWindowDimensions,
 } from "react-native";
 
 export default function App() {
-  console.log(Dimensions.get("screen"));
+  const window = useWindowDimensions();
 
   return (
     <SafeAreaView style={styles.container}>
       <View
         style={{ width: "50%", height: 70, backgroundColor: "dodgerblue" }}
       ></View>
+      <Text>{`Window Dimensions: height - ${window.height}, width - ${window.width}`}</Text>
     </SafeAreaView>
   );
 }
