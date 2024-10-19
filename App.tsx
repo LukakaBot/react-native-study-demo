@@ -9,6 +9,7 @@ import {
   TouchableOpacity,
   TouchableHighlight,
   TouchableNativeFeedback,
+  Button,
 } from "react-native";
 
 export default function App() {
@@ -23,6 +24,11 @@ export default function App() {
         React Native - Hello React Native - Hello React Native - Hello React
         Native
       </Text>
+      <Button
+        color={"orange"}
+        title="Press Me"
+        onPress={() => console.log("Button Pressed")}
+      />
       <TouchableWithoutFeedback onPress={() => console.log("Image Pressed")}>
         <Image
           fadeDuration={1000}
