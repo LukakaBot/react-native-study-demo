@@ -1,16 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import {
-  StyleSheet,
-  Text,
-  View,
-  SafeAreaView,
-  Image,
-  TouchableWithoutFeedback,
-  TouchableOpacity,
-  TouchableHighlight,
-  TouchableNativeFeedback,
-  Button,
-} from "react-native";
+import { StyleSheet, SafeAreaView, Button, Alert } from "react-native";
 
 export default function App() {
   const handlePress = () => {
@@ -19,51 +8,26 @@ export default function App() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Text numberOfLines={1} onPress={handlePress}>
-        Hello React Native - Hello React Native - Hello React Native - Hello
-        React Native - Hello React Native - Hello React Native - Hello React
-        Native
-      </Text>
       <Button
         color={"orange"}
         title="Press Me"
-        onPress={() => console.log("Button Pressed")}
+        onPress={() =>
+          Alert.alert("My title", "My message", [
+            {
+              text: "Yes",
+              onPress: () => {
+                console.log("Yes");
+              },
+            },
+            {
+              text: "No",
+              onPress: () => {
+                console.log("No");
+              },
+            },
+          ])
+        }
       />
-      <TouchableWithoutFeedback onPress={() => console.log("Image Pressed")}>
-        <Image
-          fadeDuration={1000}
-          source={{
-            width: 100,
-            height: 100,
-            uri: "https://picsum.photos/100/100",
-          }}
-        />
-      </TouchableWithoutFeedback>
-      <TouchableOpacity onPress={() => console.log("Image Pressed")}>
-        <Image
-          fadeDuration={1000}
-          source={{
-            width: 100,
-            height: 100,
-            uri: "https://picsum.photos/100/100",
-          }}
-        />
-      </TouchableOpacity>
-      <TouchableHighlight onPress={() => console.log("Image Pressed")}>
-        <Image
-          fadeDuration={1000}
-          source={{
-            width: 100,
-            height: 100,
-            uri: "https://picsum.photos/100/100",
-          }}
-        />
-      </TouchableHighlight>
-      <TouchableNativeFeedback>
-        <View
-          style={{ width: 100, height: 100, backgroundColor: "dodgerblue" }}
-        />
-      </TouchableNativeFeedback>
       <StatusBar style="auto" />
     </SafeAreaView>
   );
