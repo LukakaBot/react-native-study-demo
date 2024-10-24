@@ -9,19 +9,20 @@ export default function App() {
         flexDirection: "row",
         justifyContent: "center",
         alignItems: "center",
+        alignContent: "center",
+        flexWrap: "wrap",
       }}
     >
       <View
-        style={{
-          alignSelf: "flex-start",
-          backgroundColor: "dodgerblue",
-          width: 100,
-          height: 100,
-        }}
+        style={{ backgroundColor: "dodgerblue", width: 100, height: 300 }}
       ></View>
-      <View style={{ backgroundColor: "gold", width: 100, height: 200 }}></View>
+      <View style={{ backgroundColor: "gold", width: 100, height: 100 }}></View>
       <View
-        style={{ backgroundColor: "tomato", width: 100, height: 300 }}
+        style={{ backgroundColor: "tomato", width: 100, height: 100 }}
+      ></View>
+      <View style={{ backgroundColor: "grey", width: 100, height: 100 }}></View>
+      <View
+        style={{ backgroundColor: "greenyellow", width: 100, height: 100 }}
       ></View>
     </View>
   );
