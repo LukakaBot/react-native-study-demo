@@ -3,7 +3,7 @@
     "name": "react-native-study-demo",
     "slug": "react-native-study-demo",
     "version": "1.0.0",
-    "orientation": "default",
+    "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
